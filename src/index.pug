@@ -1,0 +1,106 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title @lirawx
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+    link(rel='stylesheet', href='style.css')
+  body
+    nav#language
+      .meta(data-lang='en') 标准
+      .meta(data-lang='cn') 中式
+    main
+      section.timeline
+        article
+          ul.stories
+            li.story
+              .date ABOUT
+              .content 
+                h1 Hsi P'eng
+                h2 熙
+                p
+                  a.social-link(href='/resume') 简历
+                  a.social-link(href='https://twitter.com/lirawx') Twitter
+                  a.social-link(href='https://github.com/lirawx') GitHub
+                  a.social-link(href='mailto:i@lirawx.cn') Mail
+                blockquote
+                  p Life is short; Let it be undefined;
+            each story in stories
+              li.story(class=(story.highlight ? "highlight" : ""))
+                .date=story.date
+                .content!=story.content
+      section#footer
+        p Copyright &copy; 2016 
+          a(href='https://lirawx.me') Lirawx.
+          span - All rights reserved. Hosted by  
+          a(href="https://github.com", style="font-weight: bold;") Github.
+    a.comments#comment-button
+      .popup 点击留言
+      img.boat(src='img/LIRAWX.png')
+    .cover.done.comments-box#comment-box
+      h1 留言
+      .close [×]
+      script(
+        src='https://utteranc.es/client.js',
+        repo="lirawx/lirawx.github.io"
+        issue-term="pathname"
+        label="✨💬✨"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+      )
+    .cover#cover
+      h1 Hsi P'eng
+      h2 熙
+      blockquote Life is short; Let it be undefined;
+    script.
+      window.onload = function () {
+        var body = document.body
+        if (body) {
+          var screenWidth = window.innerWidth
+          var width = body.scrollWidth
+          body.scrollLeft = width - screenWidth
+        }
+        //- Model
+        var lang = localStorage.getItem('lang') || 'en'
+        //- Controller
+        var langSelections = Array.from(document.querySelectorAll('#language .meta'))
+        langSelections.forEach(function(langSelection) {
+          langSelection.addEventListener('click', function(e) {
+            var newLang = e.target.dataset.lang
+            changeLang(lang, newLang)
+            lang = newLang
+            localStorage.setItem('lang', lang)
+          })
+        })
+        //- View
+        var html = document.querySelector('html')
+        var changeLang = function(oldLang, newLang) {
+          if (!newLang) return
+          html.classList.remove(oldLang)
+          html.classList.add(newLang)
+          langSelections.forEach(function(langSelection) {
+            if (langSelection.dataset.lang == newLang) {
+              langSelection.classList.add('active')
+            } else {
+              langSelection.classList.remove('active')
+            }
+          })
+        }
+        changeLang(null, lang)
+        //- Cover
+        var cover = document.querySelector('#cover')
+        setTimeout(function() {
+          cover.classList.add('done')
+        }, 1000)
+        //- Comment
+        var commentButton = document.querySelector('#comment-button')
+        var commentBox = document.querySelector('#comment-box')
+        var commentBoxClose = document.querySelector('#comment-box .close')
+        commentButton.addEventListener('click', function(e) {
+          commentBox.classList.remove('done')
+        })
+        commentBoxClose.addEventListener('click', function(e) {
+          commentBox.classList.add('done')
+        })
+      }

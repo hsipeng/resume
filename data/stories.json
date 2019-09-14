@@ -1,0 +1,29 @@
+{
+    "stories": [
+        {
+            "date": "04/13/2018",
+            "content": "进入[苏宁](https://www.suning.com)徐庄总部，供应商以及商户平台担任 前端工程师， 从事大数据可视化相关业务",
+            "highlight": true
+        },
+        {
+            "date": "06/20/2017",
+            "content": "成功从[扬州大学](http://www.yzu.edu.cn/)毕业, 并且大四开始接触前端开发行业。",
+            "highlight": false
+        },
+        {
+            "date": "09/1/2013",
+            "content": "到[扬州](https://map.baidu.com/@13293818.84,3792807.67,13z)的[扬州大学](http://www.yzu.edu.cn/)学习 物联网工程专业,专业偏向计算机工程",
+            "highlight": false
+        },
+        {
+            "date": "06/20/2013",
+            "content": "我在[江苏无锡](https://map.baidu.com/@13393990.44,3674896.25,12z)完成高中学业",
+            "highlight": false
+        },
+        {
+            "date": "09/12/1994",
+            "content": "我出生在[江苏无锡](https://map.baidu.com/@13393990.44,3674896.25,12z)",
+            "highlight": true
+        }
+    ]
+}
