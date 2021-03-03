@@ -6,7 +6,7 @@
   "dependencies": {
     "airtable": "^0.7.1",
     "marked": "^0.3.6",
-    "pug": "^2.0.0-beta6"
+    "pug": "^3.0.1"
   },
   "devDependencies": {
     "browser-sync": "^2.18.5",
