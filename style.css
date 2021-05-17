@@ -312,7 +312,6 @@ html.cn {
     cursor: pointer;
     bottom: 5vh;
     right: 10vw;
-    animation: boat 10s infinite alternate;
 }
 
 @keyframes boat {
